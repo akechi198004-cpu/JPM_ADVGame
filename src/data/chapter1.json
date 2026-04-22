@@ -1,105 +1,116 @@
 {
-  "start": { "id": "start", "type": "scene", "backgroundId": "street", "next": "n1" },
-  "n1": { "id": "n1", "type": "narration", "text": "阳春三月，清河县市井繁哗。西门大官人手摇泥金折扇，闲庭信步。", "next": "n2" },
+  "start": { "id": "start", "type": "scene", "backgroundId": "street_day", "next": "n1" },
+  "n1": { "id": "n1", "type": "narration", "text": "阳春三月，清河县市井繁哗，正值白昼。西门大官人手摇泥金折扇，闲庭信步。", "next": "n2" },
   "n2": { "id": "n2", "type": "narration", "text": "恰行至一家临街的小楼下，忽听得头顶“呀”的一声窗响。", "next": "n3" },
   "n3": { "id": "n3", "type": "narration", "text": "一根斑竹叉竿不偏不倚，正落下来，砸在西门庆的乌纱帽檐上。", "next": "show_x1" },
   "show_x1": { "id":"show_x1", "type":"show", "characterId":"ximen", "expression":"normal", "position":"left", "next":"x1" },
-  "x1": { "id":"x1", "type":"say", "characterId":"ximen", "text":"哎哟！是哪家不长眼的，敢砸西门大娘……呸，西门大官人的头顶？", "next":"show_p1" },
+  "x1": { "id":"x1", "type":"say", "characterId":"ximen", "text":"哎哟！是哪家不长眼的，敢砸我西门大官人的头顶？", "next":"show_p1" },
   "show_p1": { "id":"show_p1", "type":"show", "characterId":"pan", "expression":"shock", "position":"right", "next":"p1" },
-  "p1": { "id":"p1", "type":"say", "characterId":"pan", "text":"哎呀！大官人息怒，奴家一时手滑，被东风吹落了叉竿……", "next":"c1" },
+  "p1": { "id":"p1", "type":"say", "characterId":"pan", "text":"哎呀！大官人息怒，奴家一时手滑，被春风吹落了叉竿……", "next":"c1" },
   "c1": {
     "id": "c1",
     "type": "choice",
     "options": [
       {
-        "text": "拾起叉竿，笑脸相逢",
+        "text": "抬眼细看，笑脸相迎",
         "next": "flirt_narr",
         "effects": [{"type": "addAffinity", "key":"pan_affinity", "value":10}]
       },
       {
         "text": "勃然大怒，破口大骂",
         "next": "bad_end_scene",
-        "effects": []
+        "effects": [{"type": "addAffinity", "key":"pan_affinity", "value":-10}]
       }
     ]
   },
-  "bad_end_scene": { "id":"bad_end_scene", "type":"scene", "backgroundId":"ending_bg", "next":"bad_end_narr" },
-  "bad_end_narr": { "id":"bad_end_narr", "type":"narration", "text":"西门庆勃然大怒拂袖而去，错过了一段风流佳话。\n【BAD END】", "next":"bad_end_node" },
+  "bad_end_scene": { "id":"bad_end_scene", "type":"scene", "backgroundId":"street_night", "next":"bad_end_narr" },
+  "bad_end_narr": { "id":"bad_end_narr", "type":"narration", "text":"西门庆在烈日下骂骂咧咧，直吵到天黑灯亮，佳人早已被吓得闭紧了窗户，错过了一段风流佳话。\n【BAD END：街头泼皮】", "next":"bad_end_node" },
   "bad_end_node": { "id":"bad_end_node", "type":"end", "endingId":"bad1" },
   
-  "flirt_narr": { "id":"flirt_narr", "type":"narration", "text":"细看之下，西门庆只觉此女明眸皓齿，登时三魂荡荡，七魄悠悠。", "next":"x2" },
+  "flirt_narr": { "id":"flirt_narr", "type":"narration", "text":"西门庆抬头细看，只见此女明眸皓齿，登时三魂荡荡，七魄悠悠。", "next":"x2" },
   "x2": { "id":"x2", "type":"say", "characterId":"ximen", "text":"小娘子莫惊，这点小事何足挂齿。这叉竿，便由小生奉上。", "next":"p2" },
   "p2": { "id":"p2", "type":"say", "characterId":"pan", "text":"多谢大官人宽洪海量。奴家且先退下了。", "next":"hide_p1" },
   "hide_p1": { "id":"hide_p1", "type":"hide", "characterId":"pan", "next":"hide_x1" },
-  "hide_x1": { "id":"hide_x1", "type":"hide", "characterId":"ximen", "next":"to_pharmacy" },
+  "hide_x1": { "id":"hide_x1", "type":"hide", "characterId":"ximen", "next":"to_hall_day" },
 
-  "to_pharmacy": { "id":"to_pharmacy", "type":"scene", "backgroundId":"pharmacy", "next":"pharm_n1" },
-  "pharm_n1": { "id":"pharm_n1", "type":"narration", "text":"自那日街头偶遇，西门庆便害了相思病。这日，他百无聊赖地坐在生药铺里算账。", "next":"show_m1" },
-  "show_m1": { "id":"show_m1", "type":"show", "characterId":"meng", "expression":"normal", "position":"right", "next":"show_x2" },
-  "show_x2": { "id":"show_x2", "type":"show", "characterId":"ximen", "expression":"normal", "position":"left", "next":"m1" },
-  "m1": { "id":"m1", "type":"say", "characterId":"meng", "text":"大官人，今日怎么愁眉不展的？可是药铺里缺了一味名贵香料？", "next":"x3" },
-  "x3": { "id":"x3", "type":"say", "characterId":"ximen", "text":"孟三娘莫要取笑，小生近日见了一位娘子，惊为天人，正为此苦恼。", "next":"m2" },
-  "m2": { "id":"m2", "type":"say", "characterId":"meng", "text":"那必是前街的潘家娘子了。她家丫头春梅正午时分会去酒楼买酒，你去那边拦她便是。", "next":"hide_m1" },
+  "to_hall_day": { "id":"to_hall_day", "type":"scene", "backgroundId":"hall_day", "next":"hall_n1" },
+  "hall_n1": { "id":"hall_n1", "type":"narration", "text":"午后，西门庆回到府上大厅，虽是金碧辉煌，他却心不在焉，满脑子都是那街边倩影。", "next":"show_x2" },
+  "show_x2": { "id":"show_x2", "type":"show", "characterId":"ximen", "expression":"normal", "position":"left", "next":"show_m1" },
+  "show_m1": { "id":"show_m1", "type":"show", "characterId":"meng", "expression":"normal", "position":"right", "next":"m1" },
+  "m1": { "id":"m1", "type":"say", "characterId":"meng", "text":"大官人，今日账本都拿反了，心思飞到哪家院墙里去了？", "next":"x3" },
+  "x3": { "id":"x3", "type":"say", "characterId":"ximen", "text":"唉，玉楼，我今日在街上见了一位仙子，正为此苦恼无门路呢。", "next":"m2" },
+  "m2": { "id":"m2", "type":"say", "characterId":"meng", "text":"看把你给急的。若是前路那家，她家丫鬟春梅傍晚常去酒楼买点心。你去那边包个雅厢守着，递个话便是。", "next":"x4" },
+  "x4": { "id":"x4", "type":"say", "characterId":"ximen", "text":"知我者，玉楼也！我这就去！", "next":"hide_m1" },
   "hide_m1": { "id":"hide_m1", "type":"hide", "characterId":"meng", "next":"hide_x2" },
-  "hide_x2": { "id":"hide_x2", "type":"hide", "characterId":"ximen", "next":"to_tavern" },
+  "hide_x2": { "id":"hide_x2", "type":"hide", "characterId":"ximen", "next":"to_dining_day" },
 
-  "to_tavern": { "id":"to_tavern", "type":"scene", "backgroundId":"tavern", "next":"tav_n1" },
-  "tav_n1": { "id":"tav_n1", "type":"narration", "text":"西门庆听了指点，包下了酒楼雅座。不多时，果然见一娇俏丫鬟路过。", "next":"show_x3" },
+  "to_dining_day": { "id":"to_dining_day", "type":"scene", "backgroundId":"dining_day", "next":"dining_n1" },
+  "dining_n1": { "id":"dining_n1", "type":"narration", "text":"傍晚时分，西门庆在雅致的酒楼厢房坐定。果然，不多时便等到一娇俏丫鬟经过。", "next":"show_x3" },
   "show_x3": { "id":"show_x3", "type":"show", "characterId":"ximen", "expression":"normal", "position":"left", "next":"show_c1" },
   "show_c1": { "id":"show_c1", "type":"show", "characterId":"chunmei", "expression":"normal", "position":"right", "next":"c_s1" },
-  "c_s1": { "id":"c_s1", "type":"say", "characterId":"chunmei", "text":"呀，是大官人。唤奴婢上来，可是有甚么吩咐？", "next":"x4" },
-  "x4": { "id":"x4", "type":"say", "characterId":"ximen", "text":"春梅姐，这银两你且收下。替我请你家主子，还有隔壁的李瓶儿娘子，来府上厢房品茗叙旧如何？", "next":"c_s2" },
-  "c_s2": { "id":"c_s2", "type":"say", "characterId":"chunmei", "text":"大官人既然这般有心，奴婢定把话带到。不过能不能请来，就看大官人的面子了。", "next":"hide_c1" },
+  "c_s1": { "id":"c_s1", "type":"say", "characterId":"chunmei", "text":"呀，是大官人。无端唤奴婢上来，可是有甚么吩咐？", "next":"x5" },
+  "x5": { "id":"x5", "type":"say", "characterId":"ximen", "text":"小春梅，这白花花的银子你且拿去买胭脂。今入夜后我在私家庭院设宴，想请你家娘子，还有隔壁的李娘子同来赏月叙旧，可行？", "next":"c_s2" },
+  "c_s2": { "id":"c_s2", "type":"say", "characterId":"chunmei", "text":"（喜笑颜开）大官人既然这般有心，奴婢定把话带到！咱们入夜后苑见。", "next":"hide_c1" },
   "hide_c1": { "id":"hide_c1", "type":"hide", "characterId":"chunmei", "next":"hide_x3" },
-  "hide_x3": { "id":"hide_x3", "type":"hide", "characterId":"ximen", "next":"to_house" },
+  "hide_x3": { "id":"hide_x3", "type":"hide", "characterId":"ximen", "next":"to_courtyard_night" },
 
-  "to_house": { "id":"to_house", "type":"scene", "backgroundId":"house_interior", "next":"house_n1" },
-  "house_n1": { "id":"house_n1", "type":"narration", "text":"次日，西门庆在内阁雅厢静候。只听得佩环叮当，两位佳人同履而至。", "next":"show_p2" },
-  "show_p2": { "id":"show_p2", "type":"show", "characterId":"pan", "expression":"shy", "position":"left", "next":"show_ping1" },
+  "to_courtyard_night": { "id":"to_courtyard_night", "type":"scene", "backgroundId":"courtyard_night", "next":"court_n1" },
+  "court_n1": { "id":"court_n1", "type":"narration", "text":"夜幕低垂，明月高悬。西门府的私苑里摆满了琼浆玉液，假山石流水潺潺。", "next":"court_n2" },
+  "court_n2": { "id":"court_n2", "type":"narration", "text":"只听得佩环轻响，潘金莲与李瓶儿果然结伴而来，月色下两张容颜各具风情。", "next":"show_x4" },
+  "show_x4": { "id":"show_x4", "type":"show", "characterId":"ximen", "expression":"smile", "position":"left", "next":"show_pan2" },
+  "show_pan2": { "id":"show_pan2", "type":"show", "characterId":"pan", "expression":"shy", "position":"center", "next":"show_ping1" },
   "show_ping1": { "id":"show_ping1", "type":"show", "characterId":"ping", "expression":"normal", "position":"right", "next":"p3" },
-  "p3": { "id":"p3", "type":"say", "characterId":"pan", "text":"大官人万福。今日贸然叨扰，我还带了瓶儿姐姐一同赴宴。", "next":"ping1" },
-  "ping1": { "id":"ping1", "type":"say", "characterId":"ping", "text":"西门大官人这厢房，倒是个风雅清静的好去处，奴家有礼了。", "next":"house_n2" },
-  "house_n2": { "id":"house_n2", "type":"narration", "text":"两位佳人同席而坐，环肥燕瘦，各有千秋。西门庆直看得心猿意马。", "next":"c2" },
+  "p3": { "id":"p3", "type":"say", "characterId":"pan", "text":"夜深露重，让大官人久等了。我把瓶儿姐姐也一并拉了来。", "next":"ping1" },
+  "ping1": { "id":"ping1", "type":"say", "characterId":"ping", "text":"这庭院果真清幽，连虫鸣都这般悦耳，西门大官人好雅兴。", "next":"x6" },
+  "x6": { "id":"x6", "type":"say", "characterId":"ximen", "text":"有两位天仙下凡，这园子才算有了颜色。快请入座，咱们痛饮几杯！", "next":"court_n3" },
+  "court_n3": { "id":"court_n3", "type":"narration", "text":"酒过三巡，晚风拂去几分燥热，佳人们皆是娇靥若花生了微醺之态。此时，你打算更亲近哪一位？", "next":"c2" },
+  
   "c2": {
     "id": "c2",
     "type": "choice",
     "options": [
       {
-        "text": "向潘金莲频频敬酒",
+        "text": "向潘金莲频频敬酒，眉目传情",
         "next": "focus_pan",
         "effects": [
-          {"type": "addAffinity", "key":"pan_affinity", "value":10},
-          {"type": "addAffinity", "key":"ping_affinity", "value":-5}
+          {"type": "addAffinity", "key":"pan_affinity", "value":20},
+          {"type": "addAffinity", "key":"ping_affinity", "value":-10}
         ]
       },
       {
-        "text": "对李瓶儿大献殷勤",
+        "text": "为李瓶儿添酒夹菜，体贴入微",
         "next": "focus_ping",
         "effects": [
-          {"type": "addAffinity", "key":"ping_affinity", "value":10},
-          {"type": "addAffinity", "key":"pan_affinity", "value":-5}
+          {"type": "addAffinity", "key":"ping_affinity", "value":20},
+          {"type": "addAffinity", "key":"pan_affinity", "value":-10}
         ]
       }
     ]
   },
-  "focus_pan": { "id":"focus_pan", "type":"say", "characterId":"pan", "text":"大官人这张嘴，端的是像抹了蜜一般，叫人好生害臊。", "next":"to_extra" },
-  "focus_ping": { "id":"focus_ping", "type":"say", "characterId":"ping", "text":"大官人谬赞了，奴家哪有金莲妹妹这般水灵标致，您快别劝酒了。", "next":"to_extra" },
-
-  "to_extra": { "id":"to_extra", "type":"scene", "backgroundId":"extra_bg", "next":"hide_b4_ex" },
-  "hide_b4_ex": { "id":"hide_b4_ex", "type":"hide", "characterId":"pan", "next":"hide_b4_ex2" },
-  "hide_b4_ex2": { "id":"hide_b4_ex2", "type":"hide", "characterId":"ping", "next":"ex_n1" },
-  "ex_n1": { "id":"ex_n1", "type":"narration", "text":"酒过三巡，众人皆有三分醉意。西门庆遂邀两位娘子移步至楼后的一处幽秘私苑。", "next":"ex_n2" },
-  "ex_n2": { "id":"ex_n2", "type":"narration", "text":"晚风习习，花影摇曳。此情此景，气氛顿时变得旖旎而微妙起来。", "next":"show_c2" },
-  "show_c2": { "id":"show_c2", "type":"show", "characterId":"chunmei", "expression":"normal", "position":"right", "next":"c_s3" },
-  "c_s3": { "id":"c_s3", "type":"say", "characterId":"chunmei", "text":"夜深风大，奴婢去给主子们寻些御寒的披风来，还请大官人好生照看两位娘子。", "next":"hide_c2" },
-  "hide_c2": { "id":"hide_c2", "type":"hide", "characterId":"chunmei", "next":"ex_n3" },
-  "ex_n3": { "id":"ex_n3", "type":"narration", "text":"俏丫鬟春梅识趣地退下，偌大的庭院花丛中，只剩下西门庆与两位佳人，暗香浮动。", "next":"show_x4" },
-  "show_x4": { "id":"show_x4", "type":"show", "characterId":"ximen", "expression":"smile", "position":"center", "next":"x5" },
-  "x5": { "id":"x5", "type":"say", "characterId":"ximen", "text":"春宵一刻值千金，两位娘子，今日便在此歇歇脚，让小生好好……探讨一番这大好春光如何？", "next":"ex_n4" },
-  "ex_n4": { "id":"ex_n4", "type":"narration", "text":"帷幔深坠，笑语盈盈。这清河县的风月韵事，才刚刚掀开冰山一角。", "next":"to_end" },
   
-  "to_end": { "id":"to_end", "type":"scene", "backgroundId":"ending_bg", "next":"hide_x_end" },
-  "hide_x_end": { "id":"hide_x_end", "type":"hide", "characterId":"ximen", "next":"end_narr" },
-  "end_narr": { "id":"end_narr", "type":"narration", "text":"【第一章 完结】\n预知后事如何，佳人芳心终归谁手，且待下回分解。", "next":"end_node" },
-  "end_node": { "id":"end_node", "type":"end", "endingId":"demo_end" }
+  "focus_pan": { "id":"focus_pan", "type":"narration", "text":"你对金莲格外上心，惹得旁边的李瓶儿借故去庭院另一头看鱼。", "next":"hide_ping1" },
+  "hide_ping1": { "id":"hide_ping1", "type":"hide", "characterId":"ping", "next":"p4" },
+  "p4": { "id":"p4", "type":"say", "characterId":"pan", "text":"（压低声音）大官人，这里坐着气虚，不如随奴家去一旁的园林长廊里走走散散酒气？", "next":"hide_p2" },
+  "hide_p2": { "id":"hide_p2", "type":"hide", "characterId":"pan", "next":"hide_x4" },
+  "hide_x4": { "id":"hide_x4", "type":"hide", "characterId":"ximen", "next":"to_garden_night" },
+
+  "to_garden_night": { "id":"to_garden_night", "type":"scene", "backgroundId":"garden_night", "next":"show_x_g" },
+  "show_x_g": { "id":"show_x_g", "type":"show", "characterId":"ximen", "expression":"smile", "position":"left", "next":"show_p_g" },
+  "show_p_g": { "id":"show_p_g", "type":"show", "characterId":"pan", "expression":"shy", "position":"right", "next":"p_g_1" },
+  "p_g_1": { "id":"p_g_1", "type":"say", "characterId":"pan", "text":"花前月下，这夜间池塘边的风……倒比白天的舒服得多。", "next":"pan_end_narr" },
+  "pan_end_narr": { "id":"pan_end_narr", "type":"narration", "text":"月色朦胧，树影婆娑。两人在幽暗的园游中暗生情愫，距离彼此只差毫厘……\n【潘金莲线 序章完】", "next":"pan_end_node" },
+  "pan_end_node": { "id":"pan_end_node", "type":"end", "endingId":"pan_route_start" },
+
+  "focus_ping": { "id":"focus_ping", "type":"narration", "text":"你的体贴让瓶儿连连娇笑，潘金莲见状讨了个没趣，便去逗弄石栏上的鹦鹉。", "next":"hide_pan_c" },
+  "hide_pan_c": { "id":"hide_pan_c", "type":"hide", "characterId":"pan", "next":"ping2" },
+  "ping2": { "id":"ping2", "type":"say", "characterId":"ping", "text":"夜风微凉，奴家不胜酒力。听闻大官人的卧室藏着珍视的西洋挂件，不知可否……借步内室一观？", "next":"hide_ping2" },
+  "hide_ping2": { "id":"hide_ping2", "type":"hide", "characterId":"ping", "next":"hide_x5" },
+  "hide_x5": { "id":"hide_x5", "type":"hide", "characterId":"ximen", "next":"to_bedroom_night" },
+
+  "to_bedroom_night": { "id":"to_bedroom_night", "type":"scene", "backgroundId":"bedroom_night", "next":"show_x_b" },
+  "show_x_b": { "id":"show_x_b", "type":"show", "characterId":"ximen", "expression":"smile", "position":"left", "next":"show_ping_b" },
+  "show_ping_b": { "id":"show_ping_b", "type":"show", "characterId":"ping", "expression":"normal", "position":"right", "next":"ping_b_1" },
+  "ping_b_1": { "id":"ping_b_1", "type":"say", "characterId":"ping", "text":"这红纱幔帐，暖香袅袅。大官人果然是个极懂风雅的人。", "next":"ping_end_narr" },
+  "ping_end_narr": { "id":"ping_end_narr", "type":"narration", "text":"红烛摇曳，满室旖旎。李瓶儿的话语里似有着无尽深意，引人遐想……\n【李瓶儿线 序章完】", "next":"ping_end_node" },
+  "ping_end_node": { "id":"ping_end_node", "type":"end", "endingId":"ping_route_start" }
 }

@@ -50,35 +50,65 @@ export const gameData: GameData = {
     },
   },
   backgrounds: {
-    street: {
-      id: "street",
-      name: "清河县大街 (Street)",
-      url: "/assets/backgrounds/bg_1.png",
+    hall_day: {
+      id: "hall_day",
+      name: "西门府大厅 (Hall Day)",
+      url: "/assets/backgrounds/bg_hall_day.png",
     },
-    pharmacy: {
-      id: "pharmacy",
-      name: "生药铺 (Pharmacy)",
-      url: "/assets/backgrounds/bg_2.png",
+    hall_night: {
+      id: "hall_night",
+      name: "西门府大厅 (Hall Night)",
+      url: "/assets/backgrounds/bg_hall_night.png",
     },
-    house_interior: {
-      id: "house_interior",
-      name: "金莲闺阁 (House)",
-      url: "/assets/backgrounds/bg_3.png",
+    bedroom_day: {
+      id: "bedroom_day",
+      name: "红纱卧房 (Bedroom Day)",
+      url: "/assets/backgrounds/bg_bedroom_day.png",
     },
-    tavern: {
-      id: "tavern",
-      name: "酒楼 (Tavern)",
-      url: "/assets/backgrounds/bg_4.png",
+    bedroom_night: {
+      id: "bedroom_night",
+      name: "红纱卧房 (Bedroom Night)",
+      url: "/assets/backgrounds/bg_bedroom_night.png",
     },
-    ending_bg: {
-      id: "ending_bg",
-      name: "结局幕布 (Ending Room)",
-      url: "/assets/backgrounds/bg_5.png",
+    garden_day: {
+      id: "garden_day",
+      name: "私家园林 (Garden Day)",
+      url: "/assets/backgrounds/bg_garden_day.png",
     },
-    extra_bg: {
-      id: "extra_bg",
-      name: "附加场景 (Extra Scene)",
-      url: "/assets/backgrounds/bg_6.png",
+    garden_night: {
+      id: "garden_night",
+      name: "私家园林 (Garden Night)",
+      url: "/assets/backgrounds/bg_garden_night.png",
+    },
+    street_day: {
+      id: "street_day",
+      name: "热闹大街 (Street Day)",
+      url: "/assets/backgrounds/bg_street_day.png",
+    },
+    street_night: {
+      id: "street_night",
+      name: "灯火长街 (Street Night)",
+      url: "/assets/backgrounds/bg_street_night.png",
+    },
+    dining_day: {
+      id: "dining_day",
+      name: "雅致厢房 (Dining Day)",
+      url: "/assets/backgrounds/bg_dining_day.png",
+    },
+    dining_night: {
+      id: "dining_night",
+      name: "雅致厢房 (Dining Night)",
+      url: "/assets/backgrounds/bg_dining_night.png",
+    },
+    courtyard_day: {
+      id: "courtyard_day",
+      name: "私苑 (Courtyard Day)",
+      url: "/assets/backgrounds/bg_courtyard_day.png",
+    },
+    courtyard_night: {
+      id: "courtyard_night",
+      name: "月下庭院 (Courtyard Night)",
+      url: "/assets/backgrounds/bg_courtyard_night.png",
     },
   },
   tasks: {
