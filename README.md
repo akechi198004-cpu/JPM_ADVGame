@@ -1,20 +1,29 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 金瓶梅交互叙事引擎 (Interactive Story Engine)
 
-# Run and deploy your AI Studio app
+这是一个基于 TypeScript, React, Vite 和 Firebase 构建的高级交互式叙事应用。本项目旨在探索文学经典与数字化互动叙事的结合，提供沉浸式的阅读与决策体验。
 
-This contains everything you need to run your app locally.
+## 📸 精彩预览
 
-View your app in AI Studio: https://ai.studio/apps/11443fd4-78b2-42a1-a105-a36ab885523c
+| 对话场景 | 任务决策界面 |
+| :---: | :---: |
+| ![对话截图](./public/1.jpg) | ![决策界面](./public/2.jpg) |
 
-## Run Locally
+## 🚀 技术栈
+- **核心框架**: React 18+ (Vite 驱动)
+- **编程语言**: TypeScript
+- **后端服务**: Google Firebase (Firestore + Auth)
+- **底层图形**: 自定义像素抠图与图像处理引擎
 
-**Prerequisites:**  Node.js
+## 🕹️ 核心特性
+- **动态叙事系统**: 基于逻辑树的叙事分支，支持多结局决策。
+- **自动化立绘渲染**: 针对绿幕立绘的自动抠像与边缘平滑处理。
+- **环境交互**: 全响应式舞台布局，自动适应多种宽屏比例。
 
+## 📦 如何运行
+1. **克隆仓库**: `git clone <您的仓库地址>`
+2. **安装依赖**: `npm install`
+3. **环境配置**: 复制 `.env.example` 为 `.env` 并配置 Firebase。
+4. **启动开发**: `npm run dev`
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+---
+*Powered by Google AI Studio.*
