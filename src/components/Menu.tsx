@@ -1,13 +1,28 @@
+/**
+ * 系统菜单组件 (Menu Component)
+ *
+ * 提供保存游戏、读取进度和重置游戏的系统级功能。
+ */
 import React, { useState } from "react";
 import { GameState, GameData } from "../engine/types";
 
 interface MenuProps {
+  // 触发保存游戏的回调函数
   onSave: () => void;
+  // 触发读取进度的回调函数
   onLoad: () => void;
+  // 触发重置游戏的回调函数
   onReset: () => void;
 }
 
+/**
+ * Menu 组件
+ *
+ * @param {MenuProps} props - 组件属性
+ * @returns {JSX.Element} 渲染的系统菜单面板
+ */
 export function Menu({ onSave, onLoad, onReset }: MenuProps) {
+  // 控制菜单展开/收起的状态
   const [isOpen, setIsOpen] = useState(false);
 
   return (

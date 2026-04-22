@@ -1,9 +1,15 @@
+/**
+ * 游戏静态数据配置 (Game Data Configuration)
+ *
+ * 包含所有角色、背景、任务的静态定义，以及引入的剧本节点（从 JSON 加载）。
+ */
 import { GameData, ScriptNode } from "../engine/types";
+// 引入第一章的剧本数据
 import chapter1 from "./chapter1.json";
 
-// Placeholders for backgrounds and characters.
-// We use placeholder images with appropriate text and colors.
+// 导出整个游戏的静态配置数据，供游戏引擎使用
 export const gameData: GameData = {
+  // --- 角色定义 ---
   characters: {
     ximen: {
       id: "ximen",
@@ -49,6 +55,7 @@ export const gameData: GameData = {
       },
     },
   },
+  // --- 场景背景定义 ---
   backgrounds: {
     hall_day: {
       id: "hall_day",
@@ -111,6 +118,7 @@ export const gameData: GameData = {
       url: "/assets/backgrounds/bg_courtyard_night.png",
     },
   },
+  // --- 任务定义 ---
   tasks: {
     task_meet_pan: {
       id: "task_meet_pan",
@@ -123,6 +131,9 @@ export const gameData: GameData = {
       description: "潘金莲邀请你入府喝茶，或许能结识府上其他姐妹。",
     },
   },
+  // --- 剧本数据 ---
+  // 将导入的 chapter1 JSON 断言为引擎所需的剧本节点结构
   script: chapter1 as Record<string, ScriptNode>,
+  // 剧本的入口节点 ID
   startNodeId: "start",
 };

@@ -1,16 +1,34 @@
+/**
+ * 任务面板组件 (TaskPanel Component)
+ *
+ * 负责在 UI 上渲染当前激活状态的任务列表。
+ */
 import React from "react";
 import { GameState, GameData } from "../engine/types";
 
 interface TaskPanelProps {
+  // 当前游戏状态，包含任务状态
   state: GameState;
+  // 游戏静态数据，包含任务的定义
   gameData: GameData;
 }
 
+/**
+ * TaskPanel 组件
+ *
+ * @param {TaskPanelProps} props - 组件属性
+ * @returns {JSX.Element | null} 渲染的任务面板，如果没有激活任务则返回 null
+ */
 export function TaskPanel({ state, gameData }: TaskPanelProps) {
+  // 过滤并映射出所有状态为 "active"（激活）的任务
   const activeTasks = Object.entries(state.tasks)
     .filter(([_, status]) => status === "active")
     .map(([taskId, _]) => gameData.tasks[taskId]);
 
+  // BUG: gameData.tasks[taskId] 可能为 undefined（如果在脚本中设置了任务但在数据配置中忘记定义）。
+  // 建议在这里加一个过滤以过滤掉 undefined 的项，或者确保数据绝对安全。
+
+  // 如果没有激活的任务，不渲染任何内容
   if (activeTasks.length === 0) return null;
 
   return (
