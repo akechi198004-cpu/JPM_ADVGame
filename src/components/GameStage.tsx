@@ -39,7 +39,7 @@ export function GameStage({ state, gameData }: GameStageProps) {
           return (
             <div
               key={charState.characterId}
-              className="absolute bottom-0 transition-all duration-500 z-20 pointer-events-none"
+              className="absolute bottom-[5%] transition-all duration-500 z-20 pointer-events-none"
               style={positionStyle}
             >
               <img

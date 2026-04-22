@@ -71,7 +71,7 @@ export default function App() {
       </div>
 
       {/* 16:9 container */}
-      <div className="relative w-full max-w-5xl aspect-[16/9] bg-[#14100e] border border-[#4a3728] shadow-[0_0_50px_rgba(0,0,0,0.8)] overflow-hidden z-10 m-4 mt-12">
+      <div className="relative w-full max-w-7xl aspect-[16/9] bg-[#14100e] border border-[#4a3728] shadow-[0_0_50px_rgba(0,0,0,0.8)] overflow-hidden z-10 m-4 mt-12">
         {/* Visual Stage */}
         <GameStage state={state} gameData={gameData} />
 

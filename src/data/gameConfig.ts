@@ -10,8 +10,8 @@ export const gameData: GameData = {
       name: "西门庆",
       color: "#B71C1C", // Dark red
       expressions: {
-        normal: "/assets/characters/char_5.png",
-        smile: "/assets/characters/char_5.png",
+        normal: "/assets/characters/char_5_green.png?v=6",
+        smile: "/assets/characters/char_5_green.png?v=6",
       },
     },
     pan: {
@@ -19,9 +19,9 @@ export const gameData: GameData = {
       name: "潘金莲",
       color: "#880E4F", // Pink/Purple
       expressions: {
-        normal: "/assets/characters/char_1.png",
-        shy: "/assets/characters/char_1.png",
-        shock: "/assets/characters/char_1.png",
+        normal: "/assets/characters/char_1_green.png?v=6",
+        shy: "/assets/characters/char_1_green.png?v=6",
+        shock: "/assets/characters/char_1_green.png?v=6",
       },
     },
     ping: {
@@ -29,7 +29,7 @@ export const gameData: GameData = {
       name: "李瓶儿",
       color: "#7B1FA2", // Purple
       expressions: {
-        normal: "/assets/characters/char_2.png",
+        normal: "/assets/characters/char_2_green.png?v=6",
       },
     },
     chunmei: {
@@ -37,7 +37,7 @@ export const gameData: GameData = {
       name: "庞春梅",
       color: "#E65100", // Orange
       expressions: {
-        normal: "/assets/characters/char_3.png",
+        normal: "/assets/characters/char_3_green.png?v=6",
       },
     },
     meng: {
@@ -45,7 +45,7 @@ export const gameData: GameData = {
       name: "孟玉楼",
       color: "#4E342E", // Brown
       expressions: {
-        normal: "/assets/characters/char_4.png",
+        normal: "/assets/characters/char_4_green.png?v=6",
       },
     },
   },
