@@ -9,6 +9,12 @@ interface GameStageProps {
 export function GameStage({ state, gameData }: GameStageProps) {
   const bg = state.currentBg ? gameData.backgrounds[state.currentBg] : null;
 
+  console.log("GameStage render:", { 
+    currentBg: state.currentBg, 
+    activeCharactersCount: Object.keys(state.activeCharacters).length,
+    activeCharacters: state.activeCharacters 
+  });
+
   return (
     <div className="absolute inset-0 overflow-hidden bg-black flex items-end justify-center">
       {/* Background */}
