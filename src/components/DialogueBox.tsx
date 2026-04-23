@@ -1,29 +1,13 @@
-/**
- * 对话框组件 (DialogueBox Component)
- *
- * 负责渲染人物对话或故事旁白，支持点击继续功能。
- */
 import React from "react";
 
 interface DialogueBoxProps {
-  // 说话者的名称（可选，如果是旁白则没有）
   speakerName?: string;
-  // 说话者的主题颜色（目前可能未使用在 UI 上，但为扩展预留）
   speakerColor?: string;
-  // 要显示的文本内容
   text: string;
-  // 点击对话框时触发的事件（通常是推进到下一句）
   onClick: () => void;
-  // 是否为旁白（旁白没有说话者，且样式不同）
   isNarration?: boolean;
 }
 
-/**
- * DialogueBox 组件
- *
- * @param {DialogueBoxProps} props - 组件属性
- * @returns {JSX.Element} 渲染的对话框
- */
 export function DialogueBox({
   speakerName,
   speakerColor,

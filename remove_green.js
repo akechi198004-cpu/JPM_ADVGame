@@ -3,11 +3,11 @@ import { PNG } from 'pngjs';
 import path from 'path';
 
 const files = [
-  { in: 'ChatGPT Image 2026年4月22日 22_04_57 (1).png', out: 'public/assets/characters/char_1_green.png' },
-  { in: 'ChatGPT Image 2026年4月22日 22_04_57 (2).png', out: 'public/assets/characters/char_2_green.png' },
-  { in: 'ChatGPT Image 2026年4月22日 22_04_57 (3).png', out: 'public/assets/characters/char_3_green.png' },
-  { in: 'ChatGPT Image 2026年4月22日 22_04_57 (4).png', out: 'public/assets/characters/char_4_green.png' },
-  { in: 'ChatGPT Image 2026年4月22日 22_04_57 (5).png', out: 'public/assets/characters/char_5_green.png' }
+  { in: 'ChatGPT Image 2026年4月23日 15_40_12 (1).png', out: 'public/assets/characters/char_1_green.png' },
+  { in: 'ChatGPT Image 2026年4月23日 15_40_12 (2).png', out: 'public/assets/characters/char_2_green.png' },
+  { in: 'ChatGPT Image 2026年4月23日 15_40_12 (3).png', out: 'public/assets/characters/char_3_green.png' },
+  { in: 'ChatGPT Image 2026年4月23日 15_40_12 (4).png', out: 'public/assets/characters/char_4_green.png' },
+  { in: 'ChatGPT Image 2026年4月23日 15_40_12 (5).png', out: 'public/assets/characters/char_5_green.png' }
 ];
 
 for (const task of files) {

@@ -120,7 +120,7 @@ export default function App() {
             {/* The beautiful image provided by the user. If missing, just black background. */}
             <div 
               className="absolute inset-0 bg-cover bg-center transition-transform duration-[20s] ease-out group-hover:scale-105"
-              style={{ backgroundImage: "url('/assets/backgrounds/title_bg.png')" }}
+              style={{ backgroundImage: "url('/assets/backgrounds/title_bg.png?v=11')" }}
             >
               {/* Optional: subtle scanline overlay or particle effect can go here in the future */}
             </div>

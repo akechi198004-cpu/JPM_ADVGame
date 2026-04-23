@@ -1,29 +1,14 @@
-/**
- * 游戏舞台组件 (GameStage Component)
- *
- * 负责渲染游戏背景和当前活跃的角色立绘。
- */
 import React from "react";
 import { GameData, GameState } from "../engine/types";
 
 interface GameStageProps {
-  // 当前游戏状态（包含当前背景和活跃角色信息）
   state: GameState;
-  // 静态游戏数据（包含背景和角色的资源定义）
   gameData: GameData;
 }
 
-/**
- * GameStage 组件
- *
- * @param {GameStageProps} props - 组件属性
- * @returns {JSX.Element} 渲染的游戏舞台
- */
 export function GameStage({ state, gameData }: GameStageProps) {
-  // 获取当前背景对象，如果存在的话
   const bg = state.currentBg ? gameData.backgrounds[state.currentBg] : null;
 
-  // 调试信息：输出舞台渲染状态
   console.log("GameStage render:", { 
     currentBg: state.currentBg, 
     activeCharactersCount: Object.keys(state.activeCharacters).length,
@@ -32,7 +17,7 @@ export function GameStage({ state, gameData }: GameStageProps) {
 
   return (
     <div className="absolute inset-0 overflow-hidden bg-black flex items-end justify-center">
-      {/* Background (背景层) */}
+      {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center transition-all duration-1000 opacity-90"
         style={{
@@ -40,19 +25,16 @@ export function GameStage({ state, gameData }: GameStageProps) {
         }}
       ></div>
 
-      {/* Characters (角色层) */}
+      {/* Characters */}
       <div className="relative w-full h-full flex justify-center items-end px-20 z-20">
         {Object.values(state.activeCharacters).map((charState) => {
-          // 获取角色定义数据
           const charDef = gameData.characters[charState.characterId];
-          if (!charDef) return null; // BUG 防御：如果角色ID无效则不渲染
+          if (!charDef) return null;
 
-          // 确定要使用的立绘 URL，如果指定的表情不存在则回退到 "normal"
           const imgUrl =
             charDef.expressions[charState.expression] ||
             charDef.expressions["normal"];
 
-          // 计算角色的位置样式
           let positionStyle: React.CSSProperties = { left: "50%", transform: "translateX(-75%)" };
           if (charState.position === "left") {
             positionStyle = { left: "25%", transform: "translateX(-75%)" };
